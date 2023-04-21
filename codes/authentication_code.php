@@ -15,8 +15,26 @@ if(isset($_POST['register_btn'])){
     $result_password = $register->confirmPassword($password, $confirm_password);
     if($result_password){
 
-    }else{
-        redirect("The passwords don't match", "register.php");
+       $result_user = $register->isUserExisits($email);
+
+       if($result_user){
+        redirect("You are already registered.", "register.php");
+       }
+       else{
+
+        $register_query = $register->registration($fname, $lname, $email, $password);
+        if($register_query){
+            redirect("Registered Successfully.", "login.php");
+        }
+        else{
+            redirect("Something went wrong.", "register.php");
+        }
+
+       }
+
+    }
+    else{
+        redirect("*The passwords don't match", "register.php");
     }
 
 }
