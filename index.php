@@ -23,6 +23,9 @@ include_once('includes/navbar.php');
     <div class="container">
         <div class="row">
             <div class="col-md-6">
+
+            <?php include('message.php') ?>
+
                 <h3>Home Page</h3>
                 <button class="btn btn-primary">login</button>
             </div>
