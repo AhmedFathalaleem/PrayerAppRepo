@@ -1,0 +1,52 @@
+body{
+    background-color: rgba(128, 128, 128, 0.498);
+}
+
+
+
+#prayerTimer{
+    display: flex;
+    justify-content: center;
+}
+
+.prayerTimesDiv{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    
+}
+
+#dailyHadithSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #212529;
+    height: 15rem;
+    width: 100%;
+    
+}
+
+.hadithContainerTitle{
+    display: flex;
+    position: absolute;
+    right: 0;
+    padding-right: 5px;
+}
+
+.hadith-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 10rem;
+    width: 75%;
+    border-radius: 25px;
+    color: rgb(227, 211, 211);
+    background-color: rgba(44, 122, 91, 0.74);
+    font-size: 20px;
+}
+
+.hadith-container h6{
+    font-size: 22px;
+}
+

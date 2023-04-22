@@ -1,5 +1,7 @@
 <?php
 include_once('config/app.php');
+include('controllers/HadithOfTheDay.php');
+$hadith = new HadithOfTheDay();
 
 
 include_once('includes/navbar.php');
@@ -30,6 +32,9 @@ include_once('includes/navbar.php');
                 
                 <h3>Home Page</h3>
                 
+
+
+
             </div>
         </div>
     </div>
@@ -37,9 +42,36 @@ include_once('includes/navbar.php');
 
 
 
-<div class="container">
-
+<section id="prayerTime">
+<div class="prayerTimesDiv">
+<iframe id="iframe" title="prayerWidget" class="widget-m-top" style=" height: 358px; border: 1px solid #ddd;" scrolling="no" src="https://www.islamicfinder.org/prayer-widget/360630/shafi/2/0/19.5/17.5"> </iframe>
 </div>
+
+
+</section>
+
+
+<section id="dailyHadithSection">
+    
+    <div class="container">
+        
+            <div class="hadithContainerTitle">
+                <h3 style="color: white;">أحاديث الرسول ﷺ</h3>
+            </div>
+            <div class="container hadith-container">
+            <h6><?php $hadith->printHadith();?></h6>
+            </div>
+
+    </div>
+    
+
+    
+</section>
+
+
+
+
+
 
 
 
