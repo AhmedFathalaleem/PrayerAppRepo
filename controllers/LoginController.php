@@ -11,7 +11,7 @@ public function __construct(){
 
 
 public function userLogin($email, $password){
-    $checkLogin = "select * from users where email = '$email' AND password = '$password' LIMIT 1";
+    $checkLogin = "select * from users where email = '$email' AND password = '$password' LIMIT 1;";
     $result = $this->conn->query($checkLogin);
     if($result->num_rows > 0){
 

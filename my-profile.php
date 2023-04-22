@@ -1,6 +1,8 @@
 <?php
-include_once('config/app.php');
 
+include_once('controllers/AuthenticationController.php');
+
+$data = $authenticated->authDetail();
 
 include_once('includes/navbar.php');
 
@@ -25,11 +27,9 @@ include_once('includes/navbar.php');
         <div class="row">
             <div class="col-md-6">
 
-            <?php include('message.php') ?>
-
-                
-                <h3>Home Page</h3>
-                
+                <?php include('message.php') ?>
+                <h3>Profile Page</h3>
+                <?php ?>
             </div>
         </div>
     </div>
