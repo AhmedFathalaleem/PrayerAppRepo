@@ -15,7 +15,7 @@ include_once('includes/navbar.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prayer App</title>
     <link rel="stylesheet" href="assets/css/bootstrap5.min.css">
-    <link rel="stylesheet" href="assets/css/custome.css">
+    <link rel="stylesheet" href="custome.css">
 </head>
 <body>
 
@@ -36,6 +36,10 @@ include_once('includes/navbar.php');
 </div>
 
 
+
+<div class="container">
+
+</div>
 
 
 
