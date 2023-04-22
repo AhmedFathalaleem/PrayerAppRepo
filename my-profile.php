@@ -3,6 +3,10 @@
 include_once('controllers/AuthenticationController.php');
 
 $data = $authenticated->authDetail();
+$firstName = $_SESSION['auth_user']['user_fname'];
+$lastName = $_SESSION['auth_user']['user_lname'];
+$email = $_SESSION['auth_user']['user_email'];
+
 
 include_once('includes/navbar.php');
 
@@ -29,7 +33,9 @@ include_once('includes/navbar.php');
 
                 <?php include('message.php') ?>
                 <h3>Profile Page</h3>
-                <?php ?>
+                <hr>
+                <h4>Name: <?= $firstName.' '.$lastName?></h4>
+                <h4>email: <?= $email?></h4>
             </div>
         </div>
     </div>

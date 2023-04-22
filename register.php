@@ -33,23 +33,23 @@ include_once('includes/navbar.php');
                         <form action="" method="POST">
                         <div class="mb-3">
                             <label for="">First Name</label>
-                            <input type="text" name = "fname" class="form-control">
+                            <input type="text" name = "fname" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label for="">Last Name</label>
-                            <input type="text" name = "lname" class="form-control">
+                            <input type="text" name = "lname" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label for="">Email</label>
-                            <input type="text" name = "email" class="form-control">
+                            <input type="text" name = "email" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label for="">Password</label>
-                            <input type="text" name = "password" class="form-control">
+                            <input type="text" name = "password" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label for="">Confirm Password</label>
-                            <input type="text" name = "confirm_password" class="form-control">
+                            <input type="text" name = "confirm_password" class="form-control"required>
                         </div>
                         <div class="mb-3">
                             <button type="submit" name="register_btn" class="btn btn-dark">Submit</button>

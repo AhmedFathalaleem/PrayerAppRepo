@@ -20,7 +20,13 @@ function redirect($message, $page){
 
     $redirectTo = SITE_URL.$page;
     $_SESSION['message'] = "$message";
-    header("Location: $page");
+    // check if the user is already logged in
+    if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === true){
+        header("Location: my-profile.php");
+    } else {
+        header("Location: $redirectTo");
+    }
+
     exit(0);
 }
 
