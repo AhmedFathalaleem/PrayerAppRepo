@@ -26,24 +26,28 @@
           </ul>
         </li>
         <?php if(isset($_SESSION['authenticated'])) : ?>
-  <li class="nav-item">
-    <?php 
-      if(isset($_SESSION['auth_user']['user_fname']) && isset($_SESSION['auth_user']['user_lname'])) {
-        echo '<a class="nav-link" href="#">'.$_SESSION['auth_user']['user_fname']. ' ' .$_SESSION['auth_user']['user_lname'] . '</a>';
-      } else {
-        echo '<a class="nav-link" href="#">Unknown User</a>';
-      }
-    ?>
-  </li>
-<?php else : ?>
-  <li class="nav-item">
-    <a class="nav-link" href="<?php base_url('login.php') ?>">Login</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="<?php base_url('register.php') ?>">Resigter</a>
-  </li>
-<?php endif; ?>
+          
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <?= $_SESSION['auth_user']['user_fname']." ".$_SESSION['auth_user']['user_lname']?>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><form action="" method="POST">
+              <button type="submit" name="logout_btn" class="dropdown-item">Logout</button>
+            </form></li>
+           
+          </ul>
+        </li>
+          <?php else : ?>
 
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url('login.php') ?>">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url('register.php') ?>">Resigter</a>
+        </li>
+        <?php endif; ?>
       </ul>
       
       </form>

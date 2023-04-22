@@ -41,11 +41,27 @@ private function userAuthentication($data){
 
 public function isLoggedIn(){
     if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === TRUE){
-        return true;
+        redirect('Already logged in.', 'index.php');
     }
     else{
         return false;
     }
+}
+
+
+public function logout(){
+    if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === TRUE){
+
+        unset($_SESSION['authenticated']);
+        unset($_SESSION['auth_user']);
+            return true;
+            
+    }
+    else{
+        return false;
+    }
+
+    
 }
 
 

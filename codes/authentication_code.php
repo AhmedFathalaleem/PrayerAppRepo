@@ -5,6 +5,16 @@ include_once('controllers/LoginController.php');
 
 
 $auth = new LoginController;
+
+
+if(isset($_POST['logout_btn'])){
+    $checkedLoggedOut = $auth->logout();
+    if($checkedLoggedOut){
+        redirect("Logged out", "login.php");
+    }
+}
+
+
 if(isset($_POST['login_btn'])){
     $email = validateInput($db->conn, $_POST['email']);
     $password = validateInput($db->conn, $_POST['password']);
