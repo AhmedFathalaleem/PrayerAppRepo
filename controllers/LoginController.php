@@ -12,7 +12,7 @@ public function __construct(){
 
 public function userLogin($email, $password){
     $checkLogin = "select * from users where email = '$email' AND password = '$password' LIMIT 1";
-    $result = $this->conn = $this->conn->query($checkLogin);
+    $result = $this->conn->query($checkLogin);
     if($result->num_rows > 0){
 
         $data = $result->fetch_assoc();
@@ -27,17 +27,31 @@ public function userLogin($email, $password){
 
 private function userAuthentication($data){
     $_SESSION['authenticated'] = true;
-   // $_SESSION['auth_role'] = $data['role_as'];
-   $_SESSION ['auth_user'] = [
-    'user_id ' => $data['ID'],
-    'user_fname ' => $data['fname'],
-    'user_lname ' => $data['lname'],
-    'user_email ' => $data['email']
-   ];
+    $_SESSION['auth_user'] = [
+        'user_id' => $data['id'],
+        'user_fname' => $data['fname'],
+        'user_lname' => $data['lname'],
+        'user_email' => $data['email']
+    ];
 }
 
 
+
+
+
+public function isLoggedIn(){
+    if(isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === TRUE){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 
+
+
+
+
+}
 ?>

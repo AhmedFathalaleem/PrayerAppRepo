@@ -1,7 +1,7 @@
 <?php
 include_once('config/app.php');
 include_once('codes/authentication_code.php');
-
+$auth->isLoggedIn();
 
 include_once('includes/navbar.php');
 ?>
@@ -27,7 +27,7 @@ include_once('includes/navbar.php');
                 
                 <?php include('message.php') ?>
 
-                
+
                 <div class="card">
                     <div class="card-header">
                         <h4>Login</h4>

@@ -3,6 +3,7 @@ include_once('config/app.php');
 
 
 include_once('includes/navbar.php');
+
 ?>
 
 
@@ -26,6 +27,7 @@ include_once('includes/navbar.php');
 
             <?php include('message.php') ?>
 
+                
                 <h3>Home Page</h3>
                 <button class="btn btn-primary">login</button>
             </div>
