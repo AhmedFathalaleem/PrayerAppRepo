@@ -25,20 +25,38 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <?php if(isset($_SESSION['authenticated'])) : ?>
+        <?php if(isset($_SESSION['authenticated']) && $_SESSION['auth_role']=='1') : ?>
           
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <?= $_SESSION['auth_user']['user_fname']." ".$_SESSION['auth_user']['user_lname']?>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="my-profile.php">Profile</a></li>
+            <li><a class="dropdown-item" href="adminTest.php">Admin Profile</a></li>
             <li><form action="" method="POST">
               <button type="submit" name="logout_btn" class="dropdown-item">Logout</button>
             </form></li>
            
+
+            
           </ul>
         </li>
+        <?php elseif(isset($_SESSION['authenticated'])) : ?>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <?= $_SESSION['auth_user']['user_fname']." ".$_SESSION['auth_user']['user_lname']?>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="my-profile.php">Profile</a></li>
+              <li><form action="" method="POST">
+                <button type="submit" name="logout_btn" class="dropdown-item">Logout</button>
+              </form></li>
+             
+            </ul>
+          </li>
+
+
           <?php else : ?>
 
         <li class="nav-item">
