@@ -22,7 +22,13 @@ if(isset($_POST['login_btn'])){
     
     $checkLogin = $auth->userLogin($email, $password);
     if($checkLogin){
-        redirect("Logged in Successfully","index.php");
+        if($_SESSION['auth_role'] == '1'){
+            redirect("Logged in Successfully","adminTest.php");
+        }
+        else{
+            redirect("Logged in Successfully","index.php");
+        }
+        
     }
     else{
         redirect("Invalid Email or Password", "login.php");

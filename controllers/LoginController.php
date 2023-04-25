@@ -27,6 +27,7 @@ public function userLogin($email, $password){
 
 private function userAuthentication($data){
     $_SESSION['authenticated'] = true;
+    $_SESSION['auth_role'] = $data['role'];
     $_SESSION['auth_user'] = [
         'user_id' => $data['id'],
         'user_fname' => $data['fname'],
