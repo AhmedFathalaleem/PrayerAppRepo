@@ -46,6 +46,7 @@ body{
 
 .hadith-container h6{
     font-size: 22px;
+    line-height: 2.5rem;
 }
 
 
@@ -78,3 +79,8 @@ body{
 }
 
 /*end of verses section*/
+
+
+.counterContainer{
+    background-color: #212529;
+}

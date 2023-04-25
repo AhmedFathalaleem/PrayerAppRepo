@@ -5,9 +5,11 @@ include_once('codes/authentication_code.php');
 include_once('controllers/HadithOfTheDay.php');
 include_once('controllers/VerseOfTheDay.php');
 include_once('controllers/inspirationalContent.php');
+include_once('controllers/viewCounter.php');
 $hadith = new HadithOfTheDay();
 $verse = new VerseOfTheDay();
 $content = new inspirationalContent();
+$viewcount = new viewCounter();
 
 
 include_once('includes/navbar.php');
@@ -104,11 +106,11 @@ include_once('includes/navbar.php');
 </section>
 
 
-<section class="visitorCounter">
 
+  <div class="counterContainer">
+  <h3><?php $viewcount->countViews();echo "Views count is ".$_SESSION['views'];?></h3>
+  </div>
 
-
-</section>
 
 
 
