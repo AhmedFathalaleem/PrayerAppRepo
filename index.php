@@ -107,9 +107,15 @@ include_once('includes/navbar.php');
 
 
 
-  <div class="counterContainer">
-  <h3><?php $viewcount->countViews();echo "Views count is ".$_SESSION['views'];?></h3>
+
+<section id="viewsCounter">
+  <div class="circle">
+    <h1><?php $viewcount->countViews();echo $_SESSION['views'];?></h1>
+    <p>Views Count</p>
   </div>
+</section>
+
+  
 
 
 
