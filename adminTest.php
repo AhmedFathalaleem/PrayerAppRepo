@@ -1,14 +1,16 @@
 <?php
-
+include_once('config/app.php');
 include_once('controllers/AuthenticationController.php');
 include_once('codes/authentication_code.php');
 
-$authenticated = new AuthenticationController();
-$data = $authenticated->authDetail();
-$firstName = $_SESSION['auth_user']['user_fname'];
-$lastName = $_SESSION['auth_user']['user_lname'];
-$email = $_SESSION['auth_user']['user_email'];
+include_once('controllers/HadithOfTheDay.php');
+include_once('controllers/VerseOfTheDay.php');
+include_once('controllers/inspirationalContent.php');
 
+
+$authenticated = new AuthenticationController();
+$authenticated->authDetail();
+$authenticated->admin();
 
 include_once('includes/navbar.php');
 
@@ -23,7 +25,7 @@ include_once('includes/navbar.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prayer App</title>
     <link rel="stylesheet" href="assets/css/bootstrap5.min.css">
-    <link rel="stylesheet" href="assets/css/custome.css">
+    <link rel="stylesheet" href="custome.css">
 </head>
 <body>
 
@@ -33,15 +35,21 @@ include_once('includes/navbar.php');
         <div class="row">
             <div class="col-md-6">
 
-                <?php include('message.php') ?>
-                <h3>Profile Page</h3>
-                <hr>
-                <h4>Name: <?= $firstName.' '.$lastName?></h4>
-                <h4>email: <?= $email?></h4>
+            <?php include('message.php') ?>
+
+                
+                <h3>Admin Page</h3>
+                
+                <!--DELETE THIS PAGE AFTER YOU MAKE THE ROLES-->
+
+
             </div>
         </div>
     </div>
 </div>
+
+
+
 
 
 

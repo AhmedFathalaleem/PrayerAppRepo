@@ -10,7 +10,8 @@ define('SITE_URL', 'http://localhost/fundadatabase/fundaDatabasePhp/');
 
 include_once("DBConnection.php");
 $db = new DBConnection;
-include_once('codes/authentication_code.php');
+
+include_once('codes/authentication_code.php'); /*might need to remove this*/
 
 function base_url($slug){
     echo SITE_URL.$slug;

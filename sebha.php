@@ -2,6 +2,7 @@
 
 include_once('config/app.php');
 include_once('controllers/HadithOfTheDay.php');
+include_once('codes/authentication_code.php');
 
 include_once('includes/navbar.php');
 ?>

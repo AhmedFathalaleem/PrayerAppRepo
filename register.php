@@ -1,5 +1,6 @@
 <?php
 include_once('config/app.php');
+include_once('codes/authentication_code.php');
 
 $auth->isLoggedIn();
 

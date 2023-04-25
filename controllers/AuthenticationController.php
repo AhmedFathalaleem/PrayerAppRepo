@@ -44,6 +44,19 @@ class AuthenticationController{
     }
 
 
+    public function admin(){
+        $user_email = $_SESSION['auth_user']['user_email'];
+        $checkAdmin = "select id,role from users where email = '$user_email' AND role = '1' LIMIT 1;";
+        $result = $this->conn->query($checkAdmin);
+        if($result->num_rows == 1){
+            return true;
+        }
+        else{
+            redirect("Sorry, that's an admin only page.", "index.php");
+        }
+    }
+
+
 
 
 
@@ -54,6 +67,6 @@ class AuthenticationController{
 
 }
 
-$authenticated = new AuthenticationController();
+
 
 ?>
