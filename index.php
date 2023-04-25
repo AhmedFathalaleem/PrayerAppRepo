@@ -1,7 +1,11 @@
 <?php
 include_once('config/app.php');
-include('controllers/HadithOfTheDay.php');
+include_once('controllers/HadithOfTheDay.php');
+include_once('controllers/VerseOfTheDay.php');
+include_once('controllers/inspirationalContent.php');
 $hadith = new HadithOfTheDay();
+$verse = new VerseOfTheDay();
+$content = new inspirationalContent();
 
 
 include_once('includes/navbar.php');
@@ -53,65 +57,55 @@ include_once('includes/navbar.php');
 
 <section id="dailyHadithSection">
     
-    <div class="container">
-        
-            <div class="hadithContainerTitle">
-                <h3 style="color: white;">أحاديث الرسول ﷺ</h3>
-            </div>
+    <div class="container">  
+      <h3 style="color: white;">The prophet's Hadeeth</h3>      
             <div class="container hadith-container">
-            <h6><?php $hadith->printHadith();?></h6>
+            <h6><?php if (isset($hadith)){
+                            $hadith->printhadith();}
+                            else{
+                              echo('Database Error');
+                            } ?></h6>
             </div>
-
-    </div>
-    
-
-    
+    </div> 
 </section>
 
 
 
+<section id="dailyPopularVerses">
 
-
-
-<section class="scholars">
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  <div class="container">  
+      <h3 style="color: #212529;">Verse from the Quran</h3>      
+            <div class="container verse-container">
+            <h6 class="verseText"><?php if (isset($verse)){
+                            $verse->printVerse();}
+                            else{
+                              echo('Database Error');
+                            } ?></h6>
+            </div>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="10000">
-      <img src="..." class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="..." class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+
+
+</section>
+
+<section id="dailyHadithSection">
+    
+    <div class="container">  
+      <h3 style="color: white;">inspiration quotes</h3>      
+            <div class="container hadith-container">
+            <h6><?php if (isset($content)){
+                            $content->printContent();}
+                            else{
+                              echo('Database Error');
+                            } ?></h6>
+            </div>
+    </div> 
+</section>
+
+
+<section class="visitorCounter">
+
+
+
 </section>
 
 

@@ -23,15 +23,13 @@ body{
     background-color: #212529;
     height: 15rem;
     width: 100%;
-    
+    margin:  40px 0;
+    padding-bottom: 45px;
 }
 
-.hadithContainerTitle{
-    display: flex;
-    position: absolute;
-    right: 0;
-    padding-right: 5px;
-}
+
+
+
 
 .hadith-container{
     display: flex;
@@ -50,3 +48,33 @@ body{
     font-size: 22px;
 }
 
+
+
+
+
+/*verses section*/
+
+#dailyPopularVerses{
+   
+   padding: 4rem;
+}
+
+
+.verse-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 10rem;
+    width: 75%;
+    border-radius: 25px;
+    color: rgb(227, 211, 211);
+    background-color: rgba(44, 122, 91, 0.9);
+    font-size: 40px;
+}
+.verse-container h6{
+    font-size: 18px;
+    line-height: 2rem;
+}
+
+/*end of verses section*/
