@@ -58,7 +58,7 @@ include_once('includes/navbar.php');
 <section id="dailyHadithSection">
     
     <div class="container">  
-      <h3 style="color: white;">The prophet's Hadeeth</h3>      
+      <h3 style="color: white;">The Prophet's Hadeeth</h3>      
             <div class="container hadith-container">
             <h6><?php if (isset($hadith)){
                             $hadith->printhadith();}
@@ -74,7 +74,7 @@ include_once('includes/navbar.php');
 <section id="dailyPopularVerses">
 
   <div class="container">  
-      <h3 style="color: #212529;">Verse from the Quran</h3>      
+      <h3 style="color: #212529;">Verse From The Quran</h3>      
             <div class="container verse-container">
             <h6 class="verseText"><?php if (isset($verse)){
                             $verse->printVerse();}
@@ -90,7 +90,7 @@ include_once('includes/navbar.php');
 <section id="dailyHadithSection">
     
     <div class="container">  
-      <h3 style="color: white;">inspiration quotes</h3>      
+      <h3 style="color: white;">Inspiration Quotes</h3>      
             <div class="container hadith-container">
             <h6><?php if (isset($content)){
                             $content->printContent();}
